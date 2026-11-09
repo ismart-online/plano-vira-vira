@@ -1,0 +1,159 @@
+<!doctype html>
+<html lang="pt-BR"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="robots" content="noindex,nofollow"><title>Meu plano Vira-Vira | ISMART</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Lato:wght@400;700;900&display=swap" rel="stylesheet">
+<style>
+:root{--azul:#002561;--amarelo:#ebea70;--rosa:#ee2d67;--claro:#9ddcf9;--bg:#f0f2f5;--line:#e0e4ea;--mute:#666;--ok:#1a7f4b;--okbg:#e6f4ec;--warn:#b42318;--warnbg:#fdecea;--hoje:#8a6d00;--hojebg:#fff6c7}
+*{box-sizing:border-box}body{margin:0;background:var(--bg);color:#222;font:15px/1.5 Lato,Arial,sans-serif;padding:20px 12px 48px}
+.wrap{max-width:680px;margin:0 auto;background:#fff;border-radius:14px;overflow:hidden;box-shadow:0 2px 16px rgba(0,0,0,.1)}
+.banner{background:var(--azul);padding:26px 22px 22px;position:relative;overflow:hidden}
+.banner:after{content:"";position:absolute;right:-30px;top:-30px;width:170px;height:170px;border:30px solid rgba(235,234,112,.16);border-radius:50%}
+.tag{display:inline-block;background:var(--rosa);color:#fff;font-size:10px;font-weight:700;letter-spacing:1.6px;text-transform:uppercase;padding:4px 12px;border-radius:4px;margin-bottom:10px}
+.banner h1{color:var(--amarelo);font-size:24px;font-weight:900;line-height:1.2;margin:0 0 6px;position:relative}.banner p{color:var(--claro);font-size:13px;margin:0}
+.body{padding:18px 16px 6px}h2{font-size:16px;color:var(--azul);margin:22px 0 10px}
+.resumo{border-radius:12px;padding:14px 16px;margin-bottom:10px}
+.resumo.ok{background:var(--okbg)}.resumo.alerta{background:var(--warnbg)}.resumo.neutro{background:#eef3fb}
+.resumo b.grande{font-size:18px;display:block;color:var(--azul)}.resumo.alerta b.grande{color:var(--warn)}
+.prox{border:2px solid var(--azul);border-radius:12px;padding:12px 14px}.prox .rot{font-size:12px;font-weight:700;color:var(--rosa);text-transform:uppercase;letter-spacing:.06em}
+.prox .t{font-size:17px;font-weight:900;color:var(--azul)}
+.geral{height:10px;background:#e6e9ef;border-radius:99px;overflow:hidden;margin:8px 0 2px}.geral i{display:block;height:100%;background:var(--ok)}
+details.foco{border:1px solid var(--line);border-radius:12px;margin:10px 0;overflow:hidden}
+details.foco>summary{list-style:none;cursor:pointer;padding:12px 14px;display:block}details.foco>summary::-webkit-details-marker{display:none}
+.fh{display:flex;justify-content:space-between;gap:8px;align-items:flex-start}
+.n{font-size:12px;color:var(--rosa);font-weight:700}.plat{font-weight:900;color:var(--azul);font-size:17px}
+.cont{font-size:12px;font-weight:700;border-radius:99px;padding:3px 10px;white-space:nowrap}
+.cont.ok{background:var(--okbg);color:var(--ok)}.cont.atr{background:var(--warnbg);color:var(--warn)}.cont.and{background:#eef3fb;color:var(--azul)}
+.bar{height:8px;background:#eceef2;border-radius:99px;margin:8px 0 4px;position:relative;overflow:hidden}.bar i{position:absolute;inset:0 auto 0 0;border-radius:99px}
+.bar .now{background:var(--azul)}.bar .goal{background:#b9d3ee}.small{font-size:13px;color:var(--mute)}
+.seta{font-size:12px;color:var(--azul);margin-top:4px}details[open] .seta .abre{display:none}details:not([open]) .seta .fecha{display:none}
+ul.lista{list-style:none;margin:0;padding:0 8px 8px}
+.item{display:flex;gap:10px;align-items:flex-start;padding:10px 8px;border-top:1px solid var(--line)}
+.item input{width:22px;height:22px;flex:none;margin:1px 0 0;accent-color:var(--ok);cursor:pointer}
+.item .tx{flex:1}.item.feito .tx>span:first-child{text-decoration:line-through;color:#888}
+.st{display:block;font-size:12px;margin-top:2px;font-weight:700}
+.st.ok{color:var(--ok)}.st.atr{color:var(--warn)}.st.hoje{color:var(--hoje)}.st.fut{color:var(--mute);font-weight:400}.st.marc{color:#3d7a58}
+.item.atr{background:var(--warnbg)}.item.hj{background:var(--hojebg)}
+.datas{margin:0;padding:0;list-style:none}.datas li{padding:6px 0;border-bottom:1px dashed var(--line);font-size:14px}.datas b{color:var(--azul);display:inline-block;min-width:48px}
+.eng{display:flex;gap:10px}.eng div{flex:1;text-align:center;border:1px solid var(--line);border-radius:12px;padding:10px}.eng strong{font-size:26px;display:block;color:var(--azul);font-weight:900}
+details.cal>summary{cursor:pointer;color:var(--azul);font-weight:700;padding:8px 0}
+.dia{display:grid;grid-template-columns:52px 1fr;gap:8px;padding:8px 0;border-bottom:1px solid var(--line);font-size:14px}.dia.off{opacity:.5}
+.dia .d{font-weight:900;color:var(--azul)}.dia .d small{display:block;font-weight:400;color:var(--mute)}
+.marco{display:inline-block;font-size:11px;background:#eaf2fb;color:var(--azul);border-radius:99px;padding:0 8px;margin-right:4px}
+.foot{padding:14px 18px 22px;color:var(--mute);font-size:12.5px}
+.state{max-width:480px;margin:80px auto;text-align:center}.state h2{color:var(--azul)}
+.spin{width:40px;height:40px;margin:0 auto 18px;border:4px solid #e0e4ea;border-top-color:var(--azul);border-radius:50%;animation:s .8s linear infinite}@keyframes s{to{transform:rotate(360deg)}}
+</style></head><body>
+<div id="app"><div class="state"><div class="spin"></div><p>Carregando seu plano…</p></div></div>
+<script>
+// ── Configuração (preenchida pelo gerar_saidas.py) ─────────────────
+var SHEET_ID = "1QAuFAH8EgT9_lp-zw5cvSTAoSuHyYht89wuQYFtP978", ABA = "PLANOS_VV";
+var P = /*DADOS*/null;   // só usado nas prévias locais
+
+var pct=function(v){return v==null?"—":Math.round(v*100)+"%"};
+var fmt=function(s){var a=s.split("-");return a[2]+"/"+a[1]};
+function erro(msg){document.getElementById("app").innerHTML='<div class="state"><h2>Plano não encontrado</h2><p>'+msg+'</p></div>'}
+
+// ── Busca + decifra (o conteúdo na planilha só abre com o código do link) ──
+function b64(s){var b=atob(s),u=new Uint8Array(b.length);for(var i=0;i<b.length;i++)u[i]=b.charCodeAt(i);return u}
+async function hex(txt){var h=await crypto.subtle.digest("SHA-256",new TextEncoder().encode(txt));return Array.from(new Uint8Array(h)).map(function(x){return x.toString(16).padStart(2,"0")}).join("")}
+async function abrir(codigo){
+  var id=(await hex("id:"+codigo)).slice(0,20);
+  var url="https://docs.google.com/spreadsheets/d/"+SHEET_ID+"/gviz/tq?tqx=out:csv&sheet="+encodeURIComponent(ABA)+"&tq="+encodeURIComponent("select B where A = '"+id+"'");
+  var txt=await (await fetch(url)).text();
+  var linhas=txt.trim().split("\n").map(function(l){return l.replace(/"/g,"").trim()}).filter(Boolean);
+  var cel=linhas[linhas.length-1]; if(!cel||cel.length<40) throw new Error("nao achou");
+  var raw=b64(cel), iv=raw.slice(0,12), ct=raw.slice(12);
+  var base=await crypto.subtle.importKey("raw",new TextEncoder().encode(codigo),"PBKDF2",false,["deriveKey"]);
+  var key=await crypto.subtle.deriveKey({name:"PBKDF2",salt:new TextEncoder().encode("viravira-nov26"),iterations:100000,hash:"SHA-256"},base,{name:"AES-GCM",length:256},false,["decrypt"]);
+  var pt=await crypto.subtle.decrypt({name:"AES-GCM",iv:iv},key,ct);
+  return JSON.parse(new TextDecoder().decode(pt));
+}
+
+var NOMES={"Missão":"Vai Lá e Faz","Letrus":"Letrus (redação)","Khan":"Khan Academy","Evolucional":"Evolucional"};
+var SEMANA=["dom","seg","ter","qua","qui","sex","sáb"];
+function diaSem(s){var a=s.split("-");return SEMANA[new Date(+a[0],+a[1]-1,+a[2]).getDay()]}
+var CHAVE="vv_demo";
+function lerMarcas(){try{return JSON.parse(localStorage.getItem(CHAVE)||"{}")}catch(e){return {}}}
+function salvarMarcas(m){try{localStorage.setItem(CHAVE,JSON.stringify(m))}catch(e){}}
+
+function render(p){
+  var hoje=p.hoje_demo||new Date().toLocaleDateString("sv-SE",{timeZone:"America/Sao_Paulo"});
+  var ref=p.atualizado_em||null, marcas=lerMarcas();
+  var todos=[];p.focos.forEach(function(f){(f.itens||[]).forEach(function(it){todos.push(it)})});
+  function estado(it){
+    if(it.feito===true) return "ok";
+    if(marcas[it.id]) return "marc";
+    if(it.prazo<hoje) return "atr";
+    if(it.prazo===hoje) return "hoje";
+    return "fut";
+  }
+  var nOk=0,nMarc=0,atr=[];todos.forEach(function(it){var e=estado(it);if(e==="ok")nOk++;else if(e==="marc")nMarc++;else if(e==="atr")atr.push(it)});
+  var prox=todos.filter(function(it){var e=estado(it);return e==="atr"||e==="hoje"||e==="fut"})[0];
+  var feitos=nOk+nMarc;
+
+  var h='<div class="wrap"><div class="banner"><span class="tag">Vira-Vira</span><h1>Oi, '+p.nome_exibicao+'! Este é o seu plano.</h1></div><div class="body">';
+  // ── Resumo: em que estou atrasado + o que fazer agora ──
+  if(!todos.length){h+='<div class="resumo ok"><b class="grande">Você não tem pendências no plano 🎉</b></div>'}
+  else if(atr.length){
+    h+='<div class="resumo alerta"><b class="grande">⚠️ Você está atrasado(a) em '+atr.length+' atividade'+(atr.length>1?'s':'')+'</b>'+
+       '<span class="small">'+atr.slice(0,4).map(function(it){return NOMES[it.plat]+': '+it.txt}).join(' · ')+(atr.length>4?' · e mais '+(atr.length-4):'')+'</span></div>';
+  } else if(feitos===todos.length){h+='<div class="resumo ok"><b class="grande">Você concluiu tudo! 🎉</b><span class="small">Parabéns pelo esforço. Confira com seu tutor(a).</span></div>'}
+  else {h+='<div class="resumo ok"><b class="grande">Você está em dia ✓</b><span class="small">Continue no ritmo: uma atividade por vez.</span></div>'}
+  if(prox){
+    var e=estado(prox);
+    h+='<div class="prox"><div class="rot">👉 '+(e==="atr"?'Comece por aqui':'Sua próxima atividade')+'</div><div class="t">'+prox.txt+'</div><div class="small">'+NOMES[prox.plat]+' · '+(e==="atr"?'era para '+fmt(prox.prazo):(e==="hoje"?'para hoje':'até '+fmt(prox.prazo)+' ('+diaSem(prox.prazo)+')'))+'</div></div>';
+  }
+  if(todos.length){h+='<div style="margin-top:12px" class="small"><b>'+feitos+' de '+todos.length+'</b> atividades concluídas</div><div class="geral"><i style="width:'+(100*feitos/todos.length)+'%"></i></div>'}
+
+  // ── Focos como checklist ──
+  h+='<h2>Suas atividades, por foco</h2>';
+  p.focos.forEach(function(f){
+    var its=f.itens||[],ok=0,at=0;its.forEach(function(it){var e=estado(it);if(e==="ok"||e==="marc")ok++;if(e==="atr")at++});
+    var falta=its.length-ok, ini={1:"2026-11-09",2:"2026-11-16",3:"2026-11-23"}[f.n], fim={1:"2026-11-15",2:"2026-11-22",3:"2026-11-29"}[f.n];
+    var aberto=at>0||(hoje>=ini&&hoje<=fim)||(hoje<"2026-11-09"&&f.n===1);
+    var badge=falta===0?'<span class="cont ok">✓ Concluído</span>':(at?'<span class="cont atr">'+at+' atrasada'+(at>1?'s':'')+'</span>':'<span class="cont and">falta'+(falta>1?'m ':' ')+falta+'</span>');
+    h+='<details class="foco"'+(aberto?' open':'')+'><summary><div class="fh"><div><div class="n">Foco '+f.n+' · '+f.quando+'</div><div class="plat">'+NOMES[f.plat]+'</div></div>'+badge+'</div>'+
+       '<div class="small">'+f.entrega+'</div><div class="bar"><i class="goal" style="width:'+Math.min(100,f.chega*100)+'%"></i><i class="now" style="width:'+Math.min(100,f.hoje*100)+'%"></i></div>'+
+       '<div class="small">Em 01/11: <b>'+pct(f.hoje)+'</b> · Meta: '+pct(f.meta)+' · Se cumprir: <b>'+pct(f.chega)+'</b></div>'+
+       '<div class="seta"><span class="abre">▸ ver atividades</span><span class="fecha">▾ esconder</span></div></summary><ul class="lista">';
+    its.forEach(function(it){
+      var e=estado(it), st={ok:'<span class="st ok">✓ Confirmado pela plataforma</span>',marc:'<span class="st marc">✓ Você marcou como feito</span>',
+        atr:'<span class="st atr">Atrasada · era para '+fmt(it.prazo)+' ('+diaSem(it.prazo)+')</span>',hoje:'<span class="st hoje">Para hoje</span>',
+        fut:'<span class="st fut">Até '+fmt(it.prazo)+' ('+diaSem(it.prazo)+')</span>'}[e];
+      h+='<li class="item'+(e==="ok"||e==="marc"?' feito':'')+(e==="atr"?' atr':'')+(e==="hoje"?' hj':'')+'"><input type="checkbox" data-id="'+it.id+'"'+(e==="ok"||e==="marc"?' checked':'')+(e==="ok"?' disabled':'')+' aria-label="Marcar como feito"><div class="tx"><span>'+it.txt+'</span>'+st+'</div></li>';
+    });
+    h+='</ul></details>';
+  });
+
+  // ── Datas importantes ──
+  var ef=/EF/.test(p.serie);
+  h+='<h2>Datas importantes</h2><ul class="datas">'+(ef?'<li><b>16/11</b> 🔴 Live da Khan</li>':'')+
+     '<li><b>17/11</b> 🔍 Checagem com seu tutor(a)</li><li><b>20/11</b> Feriado (atividades opcionais)</li><li><b>23/11</b> 🔍 Checagem com seu tutor(a)</li>'+
+     '<li><b>27/11</b> Repescagem: última chance de pôr tudo em dia</li><li><b>29/11</b> 🏁 Último dia do Vira-Vira</li></ul>';
+  h+='<h2>Seu engajamento geral</h2><div class="eng"><div><span class="small">Em 01/11</span><strong>'+pct(p.eng_hoje)+'</strong></div><div><span class="small">Se cumprir o plano</span><strong>'+pct(p.eng_proj)+'</strong></div></div>';
+
+  // ── Calendário (opcional) ──
+  h+='<details class="cal"><summary>📅 Ver o calendário dia a dia</summary>';
+  p.dias.forEach(function(d){
+    var off=!d.tarefa||(d.plat==="—"&&d.tarefa.indexOf("Fechar")!==0&&d.tarefa.indexOf("Pend")!==0&&d.tarefa.indexOf("Sem foco")!==0);
+    h+='<div class="dia'+(off?' off':'')+'"><div class="d">'+fmt(d.data)+'<small>'+d.dia+'</small></div><div>'+(d.marco?'<span class="marco">'+d.marco+'</span>':'')+(d.tarefa||'Descanso')+'</div></div>';
+  });
+  h+='</details></div><div class="foot">Marque ✓ quando terminar uma atividade: isso ajuda você a se organizar (fica salvo só neste aparelho). '+
+     (ref?'O “Confirmado pela plataforma” aparece quando o seu progresso é atualizado (dados até '+fmt(ref)+').':'O “Confirmado pela plataforma” aparece quando o seu progresso for atualizado.')+' Dúvidas? Fale com seu tutor(a)!</div></div>';
+  document.getElementById("app").innerHTML=h;
+  Array.prototype.forEach.call(document.querySelectorAll(".item input"),function(cb){
+    cb.addEventListener("change",function(){var m=lerMarcas();if(cb.checked)m[cb.dataset.id]=1;else delete m[cb.dataset.id];salvarMarcas(m);
+      var abertos=Array.prototype.map.call(document.querySelectorAll("details.foco"),function(d){return d.open});
+      render(p);
+      Array.prototype.forEach.call(document.querySelectorAll("details.foco"),function(d,i){d.open=abertos[i]});});
+  });
+}
+
+(function(){
+  if(P){render(P);return}
+  var q=new URLSearchParams(location.search), c=(q.get("c")||location.hash.replace(/^#c?=?/,"")||"").trim().toLowerCase();
+  if(!c){erro("O link está incompleto. Use o link que você recebeu por e-mail.");return}
+  CHAVE="vv_"+c;abrir(c).then(render).catch(function(){erro("Confira se o link está completo. Se o problema continuar, fale com seu tutor(a).")});
+})();
+</script></body></html>

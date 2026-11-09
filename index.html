@@ -10,7 +10,7 @@
 .banner{background:var(--azul);padding:26px 22px 22px;position:relative;overflow:hidden}
 .banner:after{content:"";position:absolute;right:-30px;top:-30px;width:170px;height:170px;border:30px solid rgba(235,234,112,.16);border-radius:50%}
 .tag{display:inline-block;background:var(--rosa);color:#fff;font-size:10px;font-weight:700;letter-spacing:1.6px;text-transform:uppercase;padding:4px 12px;border-radius:4px;margin-bottom:10px}
-.banner h1{color:var(--amarelo);font-size:24px;font-weight:900;line-height:1.2;margin:0 0 6px;position:relative}.banner p{color:var(--claro);font-size:13px;margin:0}
+.banner h1{color:var(--amarelo);font-size:24px;font-weight:900;line-height:1.2;margin:0 0 8px;position:relative}.banner p{color:#fff;font-size:15px;margin:0;position:relative;max-width:92%}
 .body{padding:18px 16px 6px}h2{font-size:16px;color:var(--azul);margin:22px 0 10px}
 .resumo{border-radius:12px;padding:14px 16px;margin-bottom:10px}
 .resumo.ok{background:var(--okbg)}.resumo.alerta{background:var(--warnbg)}.resumo.neutro{background:#eef3fb}
@@ -92,17 +92,10 @@ function render(p){
   var prox=todos.filter(function(it){var e=estado(it);return e==="atr"||e==="hoje"||e==="fut"})[0];
   var feitos=nOk+nMarc;
 
-  var h='<div class="wrap"><div class="banner"><span class="tag">Vira-Vira</span><h1>Oi, '+p.nome_exibicao+'! Este é o seu plano.</h1></div><div class="body">';
-  // ── Resumo: em que estou atrasado + o que fazer agora ──
-  if(!todos.length){h+='<div class="resumo ok"><b class="grande">Você não tem pendências no plano 🎉</b></div>'}
-  else if(atr.length){
-    h+='<div class="resumo alerta"><b class="grande">⚠️ Você está atrasado(a) em '+atr.length+' atividade'+(atr.length>1?'s':'')+'</b>'+
-       '<span class="small">'+atr.slice(0,4).map(function(it){return NOMES[it.plat]+': '+it.txt}).join(' · ')+(atr.length>4?' · e mais '+(atr.length-4):'')+'</span></div>';
-  } else if(feitos===todos.length){h+='<div class="resumo ok"><b class="grande">Você concluiu tudo! 🎉</b><span class="small">Parabéns pelo esforço. Confira com seu tutor(a).</span></div>'}
-  else {h+='<div class="resumo ok"><b class="grande">Você está em dia ✓</b><span class="small">Continue no ritmo: uma atividade por vez.</span></div>'}
+  var h='<div class="wrap"><div class="banner"><span class="tag">Vira Vira Engajamento 2.0</span><h1>Oi, '+p.nome_exibicao+'!</h1><p>Este é o seu plano - confira as atividades que estão pendentes navegando abaixo.</p></div><div class="body">';
   if(prox){
     var e=estado(prox);
-    h+='<div class="prox"><div class="rot">👉 '+(e==="atr"?'Comece por aqui':'Sua próxima atividade')+'</div><div class="t">'+prox.txt+'</div><div class="small">'+NOMES[prox.plat]+' · '+(e==="atr"?'era para '+fmt(prox.prazo):(e==="hoje"?'para hoje':'até '+fmt(prox.prazo)+' ('+diaSem(prox.prazo)+')'))+'</div></div>';
+    h+='<div class="prox"><div class="rot">👉 Comece por aqui</div><div class="t">'+prox.txt+'</div><div class="small">'+NOMES[prox.plat]+' · '+(e==="atr"?'era para '+fmt(prox.prazo):(e==="hoje"?'para hoje':'até '+fmt(prox.prazo)+' ('+diaSem(prox.prazo)+')'))+'</div></div>';
   }
   if(todos.length){h+='<div style="margin-top:12px" class="small"><b>'+feitos+' de '+todos.length+'</b> atividades concluídas</div><div class="geral"><i style="width:'+(100*feitos/todos.length)+'%"></i></div>'}
 
